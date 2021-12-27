@@ -225,4 +225,20 @@ class ProductManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    void shouldNotBookAndSmartphone() {
+        Product first = new Product(1, "P1", 44);
+        Product second = new Product (2, "P2", 26);
+        Product third = new Product(3, "P3", 27);
+
+        manager.add(first);
+        manager.add(second);
+        manager.add(third);
+
+        Product[] actual = manager.searchBy("P2");
+        Product[] expected = {};
+
+        assertArrayEquals(expected, actual);
+    }
 }
